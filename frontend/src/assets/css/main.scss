@@ -1,0 +1,84 @@
+@import url("generated.css");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500");
+.deployment {
+    background-color: var(--md-sys-color-on-secondary);
+    color: var(--md-sys-color-on-background);
+    border-radius: 10px;
+    display: flex;
+}
+body {
+    padding: 20px 100px 20px 100px;
+    background-color: var(--md-sys-color-background);
+    color: var(--md-sys-color-on-background);
+}
+.deploymentInner {
+    flex: 1;
+    padding: 20px;
+    border-radius: 10px;
+    // background-image: url("/public/favicon.ico");
+    background: linear-gradient(
+        to right,
+        var(--md-sys-color-primary-container) 100%,
+        transparent 0
+    );
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+.deploymentsContainer {
+    display: grid;
+    column-gap: 10px;
+    row-gap: 15px;
+    grid-template-columns: 1fr;
+}
+@media (min-width: 60em) {
+    .deploymentsContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (min-width: 90em) {
+    .deploymentsContainer {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+.stuck {
+    background-color: var(--md-sys-color-on-tertiary) !important;
+}
+.stuck > .deploymentInner {
+    background: linear-gradient(
+        to right,
+        var(--md-sys-color-tertiary-container) 100%,
+        transparent 0
+    );
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+.error {
+    background-color: var(--md-sys-color-on-error) !important;
+}
+.error > .deploymentInner {
+    background: linear-gradient(
+        to right,
+        var(--md-sys-color-error-container) 100%,
+        transparent 0
+    );
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+
+.complete {
+    background-color: #003907 !important;
+}
+.complete > .deploymentInner {
+    background: linear-gradient(to right, #00530d 100%, transparent 0);
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
